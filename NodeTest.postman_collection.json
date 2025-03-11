@@ -1,0 +1,607 @@
+{
+	"info": {
+		"_postman_id": "dbf70cb7-c786-4d71-808b-0c42439de7ce",
+		"name": "NodeTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42806844"
+	},
+	"item": [
+		{
+			"name": "Add a Product",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Samsung",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Samsung ultra phone",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "1,22,000",
+							"type": "text"
+						},
+						{
+							"key": "category",
+							"value": "Electronics",
+							"type": "text"
+						},
+						{
+							"key": "images",
+							"type": "file",
+							"src": [
+								"/home/growlt323/Desktop/PostgreSQL/Team Task big database/Screenshot from 2025-02-17 10-53-01.png",
+								"/home/growlt323/Desktop/PostgreSQL/Team Task big database/Screenshot from 2025-02-17 10-51-40.png",
+								"/home/growlt323/Pictures/Screenshots/Screenshot from 2025-02-14 11-23-14.png",
+								"/home/growlt323/Pictures/Screenshots/Screenshot from 2025-02-14 11-23-52.png"
+							]
+						}
+					]
+				},
+				"url": {
+					"raw": "127.0.0.1:3000/api/products",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a Product",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Samsung",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Samsung ultra phone",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "122000",
+							"type": "text"
+						},
+						{
+							"key": "category",
+							"value": "Electronics",
+							"type": "text"
+						},
+						{
+							"key": "images",
+							"type": "file",
+							"src": "/home/growlt323/Pictures/Screenshots/image.png"
+						},
+						{
+							"key": "averageRating",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "127.0.0.1:3003/api/products/67d01122ac4796e77aefca6e",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3003",
+					"path": [
+						"api",
+						"products",
+						"67d01122ac4796e77aefca6e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Products",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Samsung",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Samsung ultra phone",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "1,22,000",
+							"type": "text"
+						},
+						{
+							"key": "category",
+							"value": "Electronics",
+							"type": "text"
+						},
+						{
+							"key": "images",
+							"type": "file",
+							"src": [
+								"/home/growlt323/Desktop/PostgreSQL/Team Task big database/Screenshot from 2025-02-17 10-53-01.png",
+								"/home/growlt323/Desktop/PostgreSQL/Team Task big database/Screenshot from 2025-02-17 10-51-40.png",
+								"/home/growlt323/Pictures/Screenshots/Screenshot from 2025-02-14 11-23-14.png",
+								"/home/growlt323/Pictures/Screenshots/Screenshot from 2025-02-14 11-23-52.png"
+							]
+						}
+					]
+				},
+				"url": {
+					"raw": "127.0.0.1:3000/api/products",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Products by category",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "127.0.0.1:3003/api/products?category=Electronics",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3003",
+					"path": [
+						"api",
+						"products"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "Electronics"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Products by pagination",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "127.0.0.1:3003/api/products?page=2&limit=5",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3003",
+					"path": [
+						"api",
+						"products"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						},
+						{
+							"key": "limit",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Products by sorting",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "127.0.0.1:3003/api/products?sort=asc",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3003",
+					"path": [
+						"api",
+						"products"
+					],
+					"query": [
+						{
+							"key": "sort",
+							"value": "asc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add a review",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"rating\": 5,\n  \"comment\": \"Amazing product!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3003/api/products/67d01122ac4796e77aefca6e/reviews",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3003",
+					"path": [
+						"api",
+						"products",
+						"67d01122ac4796e77aefca6e",
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add a user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"rating\": 5,\n  \"comment\": \"Amazing product!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3003/api/users/register",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3003",
+					"path": [
+						"api",
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Manav\",\n  \"email\": \"manav@example.com\",\n  \"password\": \"manav@2003\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3003/api/users/login",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3003",
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3Y2ViZjY3MmQ4NmNiNmRkNzZiYWRhYyIsInVzZXJUeXBlIjoiYWRtaW4iLCJpYXQiOjE3NDE2MDI2NzIsImV4cCI6MTc0MTc3NTQ3Mn0.VPOB6YYpcQENYgQH3LNhOHC2DRcmFPn0NHkALFWsZhU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"products\": [\n    { \"product\": \"65efccad...1\", \"quantity\": 2 },\n    { \"product\": \"65efccad...2\", \"quantity\": 1 }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3003/api/orders",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3003",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Orders",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZDAyZjdhYzIwYzk5MDQ1MWNmNGYzZiIsImlhdCI6MTc0MTY5NzcyNSwiZXhwIjoxNzQyMzAyNTI1fQ.d58dI347h1VcvUAASABSNWpGQw-NnIJkkl0N0eyYq3g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZDAyZjdhYzIwYzk5MDQ1MWNmNGYzZiIsImlhdCI6MTc0MTY5NzcyNSwiZXhwIjoxNzQyMzAyNTI1fQ.d58dI347h1VcvUAASABSNWpGQw-NnIJkkl0N0eyYq3g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"products\": [\n    { \"product\": \"67d01122ac4796e77aefca6e\", \"quantity\": 2 },\n    { \"product\": \"67d014a0b6ce65ea1893d59e\", \"quantity\": 1 }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3003/api/orders",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3003",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Order by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZDAyZjdhYzIwYzk5MDQ1MWNmNGYzZiIsImlhdCI6MTc0MTY5ODEyOSwiZXhwIjoxNzQyMzAyOTI5fQ.SclvF6uTtZyQ2BhV-sqLzfclMmntvaY5mJ-hyUOYHUM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZDAyZjdhYzIwYzk5MDQ1MWNmNGYzZiIsImlhdCI6MTc0MTY5ODEyOSwiZXhwIjoxNzQyMzAyOTI5fQ.SclvF6uTtZyQ2BhV-sqLzfclMmntvaY5mJ-hyUOYHUM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3003/api/orders",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3003",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Updating status of order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZDAyZjdhYzIwYzk5MDQ1MWNmNGYzZiIsImlhdCI6MTc0MTY5ODEyOSwiZXhwIjoxNzQyMzAyOTI5fQ.SclvF6uTtZyQ2BhV-sqLzfclMmntvaY5mJ-hyUOYHUM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZDAyZjdhYzIwYzk5MDQ1MWNmNGYzZiIsImlhdCI6MTc0MTY5ODEyOSwiZXhwIjoxNzQyMzAyOTI5fQ.SclvF6uTtZyQ2BhV-sqLzfclMmntvaY5mJ-hyUOYHUM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"status\": \"Shipped\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3003/api/orders/67d03560f7f5a70aad46639f",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3003",
+					"path": [
+						"api",
+						"orders",
+						"67d03560f7f5a70aad46639f"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
